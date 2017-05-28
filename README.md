@@ -9,6 +9,8 @@ The Workshop is separated in three sections:
 * [Docker Compose](doc/02-docker-compose)
 * [Docker Swarm](doc/03-docker-swarm)
 
+This is, of course, a continuous work in progress; feel free to propose changes and spread the word.
+
 
 ### Preparations:
 
