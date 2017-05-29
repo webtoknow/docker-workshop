@@ -14,8 +14,11 @@ This is, of course, a continuous work in progress; feel free to propose changes 
 
 ### Preparations:
 
-Please [Install Docker](https://docs.docker.com/engine/installation/) 
-
+Please [Install Docker](https://docs.docker.com/engine/installation/)
+Please [Install Maven](https://maven.apache.org/install.html)
+Please [Install Git](https://git-scm.com/downloads)
+Please [Install Java](https://www.java.com/en/download/)
+Please [Install Node](https://nodejs.org/en/download/current/)
 ### Assumptions:
 
 * During workshop we will use different ports. If they are not available on your machine, adjust the CLI commands accordingly.

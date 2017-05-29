@@ -26,6 +26,7 @@ Check the available docker commands
 
 ```
 docker
+docker --help
 ```
 
 * Whenever you don't remember a command, just type docker
@@ -40,7 +41,7 @@ docker run alpine echo "Hello World"
 * If the Image is not cached, it pulls it automatically
 * It prints `Hello World` and exits
 
-### SEARCH a Container
+### SEARCH a IMAGE
 
 ```
 docker search -s 10 nginx
@@ -65,14 +66,117 @@ NOTE: Make sure to be on `Docker Workshop` directory since we'll use volume moun
 
 On Linux and Mac
 ```
-docker run -d -p 4001:80 -v $(pwd)/code/hello-world/site/:/usr/share/nginx/html:ro nginx
+docker run --name daemon -d -p 4001:80 -v $(pwd)/code/hello-world/src/:/usr/share/nginx/html:ro nginx
 ```
-Open a BROWSER with URL [localhost:4001](http://localhost:4001/)
+Open a BROWSER with URL [localhost:docker](http://localhost:4001/)
 
 * **-v**: Bind mount a volume (e.g., from the host: -v /host:/container, from docker: -v /container)
 * The volume is **linked** inside the container. Any external changes are visible directly inside the container.
 * This example breaks the immutability of the container, good for debuging, not recommended for production (Volumes should be used for data, not code)
 
+### SHOW all images
+Let’s list our images:
+
+```
+docker image ls
+```
+* **docker image ls** is command to command to list images.
+
+### SHOW all containers
+Let’s see what containers do we have now:
+
+```
+docker ps -a
+```
+* **docker ps** is command to command to list containers.
+* **-a** show all containers (default shows only running).
+
+### SHOW container logs
+Let’s see what daemon container is doing right - let’s see the logs of it:
+
+```
+docker logs -f daemon
+```
+
+* **docker logs** is command to fetch the logs of a container.
+* **-f** flag to follow the log output (works actually like `tail -f`).
+
+### STOP/START/REMOVE container
+
+Now let’s stop `daemon` container:
+
+```
+docker stop daemon
+```
+
+* **docker stop** is command to stop Docker container.
+
+```
+docker ps -a
+```
+
+Now container `daemon` is stopped. We can start it again:
+
+```
+docker start daemon
+```
+
+And ensure that it’s running:
+
+```
+docker ps -a
+```
+
+Now let’s stop it again and remove all the containers manually:
+
+```
+docker stop daemon
+docker rm <your first container name>
+docker rm daemon
+```
+
+To remove all containers we can use this command:
+
+```
+docker rm -f $(docker ps -aq)
+```
+
+* **docker rm** is command to remove container.
+* **-f** flag (for `rm`) is to stop container if it's running (force deletion).
+* **-q** flag (for `ps`) is to print only container IDs.
+
+Let's run `ps` again to ensure that we don't have containers:
+
+```
+docker ps -a
+```
+### Start Spring Boot MongoDB aplication
+
+Let’s start mongoDb container
+
+```
+docker run --name mongo -p 27017:27017 -d mongo
+```
+
+Now we cand start Spring Boot aplication
+```
+cd code
+git clone https://github.com/springframeworkguru/spring-boot-mongodb.git
+cd spring-boot-mongodb/
+mvn package install
+cd target/
+java -jar spring-boot-mongodb-0.0.1-SNAPSHOT.jar
+```
+
+Let’s stop `daemon` container:
+```
+docker stop mongo
+```
+
+Let’s start mongoDb container with volume
+```
+docker run -p 27017:27017 -d mongo -v /Users/bogdan/Desktop/mongo:/data/db
+```
 
 # Navigation 
 
