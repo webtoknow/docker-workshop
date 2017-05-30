@@ -2,12 +2,12 @@
 
 This section is separated in:
 
-* [CLI Basics](#cli-basics)
-* [Dockerfile basics](#dockerfile-basics)
+* [Docker Basics](#docker-basics)
+* [Start Spring Boot MongoDB aplication](#start-spring-boot-mongodb-aplication)
 
-# CLI Basics
+# DOCKER Basics
 
-### Version
+## Version
 
 Check you have latest version of docker installed:
 
@@ -20,7 +20,7 @@ docker -v
 * If you're not on the latest version, it will prompt you to update
 * If you're not on docker group you might need to prefix commands with `sudo`. See [here](http://docs.docker.com/installation/ubuntulinux/#giving-non-root-access) for details about it.
 
-### Commands
+## Commands
 
 Check the available docker commands
 
@@ -32,7 +32,7 @@ docker --help
 * Whenever you don't remember a command, just type docker
 * For more info, type `docker help COMMAND` (e.g. `docker help run`)
 
-### RUN a "Hello World" container
+## RUN a "Hello World" container
 
 ```
 docker run alpine echo "Hello World"
@@ -41,7 +41,25 @@ docker run alpine echo "Hello World"
 * If the Image is not cached, it pulls it automatically
 * It prints `Hello World` and exits
 
-### SEARCH a IMAGE
+## Images
+
+_Images_ are the templates docker uses to create containers from. If you're familiar with [Object Oriented Programming](https://en.wikipedia.org/wiki/Object-oriented_programming) you may (sort of) think of images as _classes_ and containers as _instances_.
+
+Check which images you have in your local repository by doing:
+
+```
+docker images
+```
+
+Let's try and get another image
+
+```
+docker pull mongo
+```
+This last command _pulled_ an image named `mongo` from [the public docker repository](https://hub.docker.com) to your local repository. This is very similar to what you achieve with `git pull` from a public `git` repository.
+
+
+We can try an image search:
 
 ```
 docker search -s 10 nginx
@@ -49,7 +67,7 @@ docker search -s 10 nginx
 
 * **-s**: Only displays with at least x stars
 
-### RUN a Container and expose a Port
+## RUN a Container and expose a Port
 
 ```
 docker run -d -p 4000:80 nginx
@@ -60,7 +78,7 @@ Open a BROWSER with URL [localhost:4000](http://localhost:4000/)
 * **-p**: Publish a container's port to the host (format: *hostPort:containerPort*)
 * For more info about the container, see [nginx](https://registry.hub.docker.com/_/nginx/)
 
-### RUN a Container with a Volume
+## RUN a Container with a Volume
 
 NOTE: Make sure to be on `Docker Workshop` directory since we'll use volume mounts in the containers of directories of the repository.
 
@@ -74,7 +92,7 @@ Open a BROWSER with URL [localhost:docker](http://localhost:4001/)
 * The volume is **linked** inside the container. Any external changes are visible directly inside the container.
 * This example breaks the immutability of the container, good for debuging, not recommended for production (Volumes should be used for data, not code)
 
-### SHOW all images
+## SHOW all images
 Let’s list our images:
 
 ```
@@ -82,7 +100,7 @@ docker image ls
 ```
 * **docker image ls** is command to command to list images.
 
-### SHOW all containers
+## SHOW all containers
 Let’s see what containers do we have now:
 
 ```
@@ -91,7 +109,7 @@ docker ps -a
 * **docker ps** is command to command to list containers.
 * **-a** show all containers (default shows only running).
 
-### SHOW container logs
+## SHOW container logs
 Let’s see what daemon container is doing right - let’s see the logs of it:
 
 ```
@@ -101,7 +119,7 @@ docker logs -f daemon
 * **docker logs** is command to fetch the logs of a container.
 * **-f** flag to follow the log output (works actually like `tail -f`).
 
-### STOP/START/REMOVE container
+## STOP/START/REMOVE container
 
 Now let’s stop `daemon` container:
 
@@ -150,7 +168,7 @@ Let's run `ps` again to ensure that we don't have containers:
 ```
 docker ps -a
 ```
-### Start Spring Boot MongoDB aplication
+# Start Spring Boot MongoDB aplication
 
 Let’s start mongoDb container
 
