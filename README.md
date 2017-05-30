@@ -12,14 +12,26 @@ The Workshop is separated in three sections:
 This is, of course, a continuous work in progress; feel free to propose changes and spread the word.
 
 
-### Preparations:
+## Preparations:
 
 Please [Install Docker](https://docs.docker.com/engine/installation/)
 Please [Install Maven](https://maven.apache.org/install.html)
 Please [Install Git](https://git-scm.com/downloads)
 Please [Install Java](https://www.java.com/en/download/)
-Please [Install Node](https://nodejs.org/en/download/current/)
 Please [Install VirtualBox](https://www.virtualbox.org/wiki/Downloads)
-### Assumptions:
+
+Clone Clone this repo (Some code examples require files located here): 
+```
+git clone https://github.com/bmnicolae/docker-workshop
+```
+
+## Assumptions:
 
 * During workshop we will use different ports. If they are not available on your machine, adjust the CLI commands accordingly.
+
+## References:
+
+* [Docker for Web Developers](https://www.pluralsight.com/courses/docker-web-development)
+* [Play by Play: Docker for Web Developers with John Papa and Dan Wahlin](https://www.pluralsight.com/courses/play-by-play-docker-web-developers-john-papa-dan-wahlin)
+* [Docker for Java Developers](https://www.udemy.com/docker-for-java-developers)
+* [Hanbur docker workshop](https://github.com/harbur/docker-workshop)
