@@ -19,6 +19,7 @@ Please [Install Maven](https://maven.apache.org/install.html)
 Please [Install Git](https://git-scm.com/downloads)
 Please [Install Java](https://www.java.com/en/download/)
 Please [Install Node](https://nodejs.org/en/download/current/)
+Please [Install VirtualBox](https://www.virtualbox.org/wiki/Downloads)
 ### Assumptions:
 
 * During workshop we will use different ports. If they are not available on your machine, adjust the CLI commands accordingly.
