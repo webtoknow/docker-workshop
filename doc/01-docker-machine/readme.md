@@ -25,6 +25,11 @@ docker-machine start default
 ```
 
 ## Run a docker container in a docker-machine
+We can see `default` machine environment variables:
+
+```
+docker-machine env default
+```
 
 Now, let's use the docker-machine we've just created. We want to run the `hello-world`.
 
