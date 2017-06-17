@@ -2,7 +2,7 @@
 
 This workshop will take you from "Hello Docker" to deploying a containerized web application to a server. There are no specific skills needed for this tutorial beyond a basic comfort with the command line and using a text editor.
 
-The Workshop is separated in three sections:
+The Workshop is separated in four sections:
 
 * [Docker Basics](doc/00-docker-basics)
 * [Docker Machine](doc/01-docker-machine)
@@ -14,11 +14,11 @@ This is, of course, a continuous work in progress; feel free to propose changes 
 
 ## Preparations:
 
-Please [Install Docker](https://docs.docker.com/engine/installation/)
-Please [Install Maven](https://maven.apache.org/install.html)
-Please [Install Git](https://git-scm.com/downloads)
-Please [Install Java](https://www.java.com/en/download/)
-Please [Install VirtualBox](https://www.virtualbox.org/wiki/Downloads)
+* [Install Docker](https://docs.docker.com/engine/installation/)
+* [Install Maven](https://maven.apache.org/install.html)
+* [Install Git](https://git-scm.com/downloads)
+* [Install Java](https://www.java.com/en/download/)
+* [Install VirtualBox](https://www.virtualbox.org/wiki/Downloads)
 
 Clone Clone this repo (Some code examples require files located here): 
 ```
